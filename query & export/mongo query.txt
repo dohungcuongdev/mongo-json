@@ -1,0 +1,9 @@
+db.getCollection('follow-users').find({$and: [{ "country": { $ne: "VN" }}, {"country": { $ne: "US" }} ]} )
+
+db.getCollection('follow-users').update({}, {$unset: {user_id:1}}, false, true);
+
+db.getCollection('follow-users').update(
+   { "country": { $eq: "KR" } },
+   { $set: { "username": "cuongvip12101995@gmail.com" } },
+   { multi: true }
+)
