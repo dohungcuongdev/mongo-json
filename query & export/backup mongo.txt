@@ -1,0 +1,4 @@
+mongodump -d HotelBookingReservationsSystem -o D:\thesis-in-process
+
+
+mongorestore -d HotelBookingReservationsSystem D:\thesis-in-process\HotelBookingReservationsSystem
