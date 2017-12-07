@@ -7,3 +7,16 @@ db.getCollection('follow-users').update(
    { $set: { "username": "cuongvip12101995@gmail.com" } },
    { multi: true }
 )
+
+db.getCollection('follow-users').update(
+   { "country": { $eq: "US" } },
+   { $set: {   
+      range: [ 344678400, 344711167 ],
+      country: 'US',
+      region: 'VA',
+      city: 'Falls Church',
+      ll: [ 38.864, -77.1922 ],
+      metro: 511,
+      zip: 22042  } },
+   { multi: true }
+)
