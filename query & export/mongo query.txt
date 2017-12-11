@@ -20,3 +20,7 @@ db.getCollection('follow-users').update(
       zip: 22042  } },
    { multi: true }
 )
+
+db.getCollection('rooms').updateMany({}, {$set: {create_by: "dohungcuongdev"}})
+
+db.getCollection('rooms').updateMany({}, {$rename:{"create_by":"created_by"}}, false, true);
