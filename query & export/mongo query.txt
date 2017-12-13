@@ -21,6 +21,8 @@ db.getCollection('follow-users').update(
    { multi: true }
 )
 
+db.getCollection('activity').distinct( "name" )
+
 db.getCollection('rooms').updateMany({}, {$set: {create_by: "dohungcuongdev"}})
 
 db.getCollection('rooms').updateMany({}, {$rename:{"create_by":"created_by"}}, false, true);
