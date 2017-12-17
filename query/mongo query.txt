@@ -24,7 +24,10 @@ db.getCollection('follow-users').update(
 db.getCollection('activity').distinct( "name" )
 
 db.getCollection('rooms').updateMany({}, {$set: {created_by: "dohungcuongdev"}})
+db.getCollection('follow-users').updateMany({"page_access" : "click link /hotel-services: "},{$set: {page_access : "click link /restaurant"}})
 
 db.getCollection('rooms').updateMany({}, {$rename:{"create_by":"created_by"}}, false, true);
 
 db.getCollection('rooms').updateMany({}, {$set: {amenities: "Shower,Bathtub,One bed for 2 adult,Seating unit,Telephone,Mini-fridge,Hair dryer,TV 39 inchs,Air-conditioner,Free WiFi"}})
+
+db.getCollection('follow-users').find().skip(5).limit(10)
