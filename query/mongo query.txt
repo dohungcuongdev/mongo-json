@@ -31,3 +31,11 @@ db.getCollection('rooms').updateMany({}, {$rename:{"create_by":"created_by"}}, f
 db.getCollection('rooms').updateMany({}, {$set: {amenities: "Shower,Bathtub,One bed for 2 adult,Seating unit,Telephone,Mini-fridge,Hair dryer,TV 39 inchs,Air-conditioner,Free WiFi"}})
 
 db.getCollection('follow-users').find().skip(5).limit(10)
+
+db.getCollection('activity').find().sort({"created_at": -1})
+
+db.getCollection('follow-users').update(
+   { "username": null },
+   { $set: { "username": "guest" } },
+   { multi: true }
+)
