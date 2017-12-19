@@ -86,3 +86,11 @@ db.getCollection('follow-users').aggregate(
 	},
      ]
  )
+ 
+ db.getCollection('follow-users').aggregate(
+    [    
+	{"$group" :
+		{_id:"$country", count:{$sum:1}}
+	},
+     ]
+ )
