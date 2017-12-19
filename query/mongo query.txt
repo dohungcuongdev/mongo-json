@@ -39,3 +39,50 @@ db.getCollection('follow-users').update(
    { $set: { "username": "guest" } },
    { multi: true }
 )
+
+db.getCollection('follow-users').count({username: "cuongvip1295@gmail.com", "page_access" : "click link /restaurant"})
+
+
+db.getCollection('follow-users').distinct("page_access",{"username": "cuongvip1295@gmail.com"})
+
+db.getCollection('follow-users').distinct("page_access",{"external_ip_address": "20.139.145.64"})
+
+db.getCollection('follow-users').find({user_ip_address: "192.168.1.128"})
+
+db.getCollection('follow-users').aggregate(
+  [
+    {
+      $match: {
+        username: "cuongvip1295@gmail.com"
+      }
+    },
+    {
+      $count: "page_access"
+    }
+  ]
+
+
+
+db.getCollection('follow-users').aggregate(
+    [
+	{"$group" :
+		{_id:"$page_access", count:{$sum:1}}
+	},
+     ]
+ )
+
+
+
+
+db.getCollection('follow-users').aggregate(
+    [    
+        {
+          $match: {
+            username: "cuongvip1295@gmail.com"
+          }
+        },
+	{"$group" :
+		{_id:"$page_access", count:{$sum:1}}
+	},
+     ]
+ )
