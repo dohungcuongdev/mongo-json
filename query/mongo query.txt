@@ -94,3 +94,11 @@ db.getCollection('follow-users').aggregate(
 	},
      ]
  )
+
+db.getCollection('follow-users').aggregate(
+    [    
+	{"$group" :
+		{_id:"$page_access", count:{$sum:1}}
+	},
+     ]
+ )
