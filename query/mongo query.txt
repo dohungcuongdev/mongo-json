@@ -102,3 +102,6 @@ db.getCollection('follow-users').aggregate(
 	},
      ]
  )
+ 
+ 
+ db.getCollection('follow-users').find({duration: {"$gt": 3600000}})
