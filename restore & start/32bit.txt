@@ -1,0 +1,5 @@
+Delete all sub files and folders in folder D:\thesis-in-process\MongoStore\data
+
+go to C:\Program Files\MongoDB\Server\3.2\bin and run following command in cmd
+
+mongod.exe --storageEngine=mmapv1 --dbpath "D:\thesis-in-process\MongoStore\data"
