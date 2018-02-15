@@ -1,3 +1,5 @@
+db.getCollection('follow-users').find({}).sort({_id:-1}).limit(1)
+
 db.getCollection('follow-users').find({$and: [{ "country": { $ne: "VN" }}, {"country": { $ne: "US" }} ]} )
 
 db.getCollection('follow-users').update({}, {$unset: {user_id:1}}, false, true);
